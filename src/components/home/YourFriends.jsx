@@ -60,7 +60,12 @@ const YourFriends = () => {
       {isLoading ? (
         <div className="flex min-h-[320px] items-center justify-center rounded-[28px] border border-[#E7ECF2] bg-white shadow-[0_12px_30px_rgba(15,23,42,0.06)]">
           <div className="flex flex-col items-center gap-4">
-            <ClipLoader color="#244D3F" loading size={54} speedMultiplier={0.9} />
+            <ClipLoader
+              color="#244D3F"
+              loading
+              size={54}
+              speedMultiplier={0.9}
+            />
             <p className="text-sm font-medium tracking-[0.08em] text-[#64748B] uppercase">
               Loading your friends...
             </p>
