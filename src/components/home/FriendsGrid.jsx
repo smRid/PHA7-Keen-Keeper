@@ -45,14 +45,14 @@ const FriendsGrid = ({ friend }) => {
           className="h-[84px] w-[84px] rounded-full object-cover"
         />
       </figure>
-      <div className="card-body items-center px-6 pb-8 pt-5 text-center">
+      <div className="card-body items-center px-6 pb-8 pt-3 text-center">
         <h2 className="card-title text-center text-[1.8rem] font-semibold leading-tight text-[#1F2937]">
           {friend.name}
         </h2>
         <p className="mt-1 text-sm font-medium text-[#94A3B8]">
           {friend.days_since_contact}d ago
         </p>
-        <p className="mt-3 flex flex-wrap justify-center gap-2">
+        <p className="mt-1 flex flex-wrap justify-center gap-2">
           {friend.tags.map((tag) => (
             <span
               key={tag}
@@ -63,7 +63,7 @@ const FriendsGrid = ({ friend }) => {
           ))}
         </p>
         <p
-          className={`mt-4 rounded-full px-3 py-1 text-xs font-semibold ${statusInfo.className}`}
+          className={`mt-1 rounded-full px-3 py-1 text-xs font-semibold ${statusInfo.className}`}
         >
           {statusInfo.label}
         </p>
