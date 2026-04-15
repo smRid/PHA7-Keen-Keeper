@@ -1,35 +1,10 @@
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
-
-const statusMap = {
-  Active: {
-    label: "On-Track",
-    className: "bg-[#295B4A] text-white",
-  },
-  "Due Soon": {
-    label: "Almost Due",
-    className: "bg-[#F2A93B] text-white",
-  },
-  Overdue: {
-    label: "Overdue",
-    className: "bg-[#F04444] text-white",
-  },
-  "On-track": {
-    label: "On-Track",
-    className: "bg-[#295B4A] text-white",
-  },
-  "Almost Due": {
-    label: "Almost Due",
-    className: "bg-[#F2A93B] text-white",
-  },
-};
+import { getFriendStatusMeta } from "@/lib/friend-ui";
 
 const FriendsGrid = ({ friend }) => {
-  const statusInfo = statusMap[friend.status] ?? {
-    label: friend.status,
-    className: "bg-slate-200 text-slate-700",
-  };
+  const statusInfo = getFriendStatusMeta(friend.status);
 
   return (
     <Link

@@ -7,7 +7,7 @@
     "days_since_contact": 18,
     "status": "Overdue",
     "tags": ["college"],
-    "bio": "Met in university during freshman orientation. We survived finals week together and have been inseparable since.",
+    "bio": "Met in university during freshman orientation.",
     "goal": 14,
     "next_due_date": "2025-07-15"
   },
@@ -19,7 +19,7 @@
     "days_since_contact": 5,
     "status": "Active",
     "tags": ["work"],
-    "bio": "Worked together on a startup project. Great problem solver and always ready for late-night brainstorming.",
+    "bio": "Worked together on a startup project.",
     "goal": 7,
     "next_due_date": "2025-07-20"
   },
@@ -31,7 +31,7 @@
     "days_since_contact": 22,
     "status": "Overdue",
     "tags": ["family"],
-    "bio": "Cousin who lives abroad. We used to play together every summer vacation.",
+    "bio": "Cousin who lives abroad.",
     "goal": 10,
     "next_due_date": "2025-07-10"
   },
@@ -43,7 +43,7 @@
     "days_since_contact": 2,
     "status": "Active",
     "tags": ["gym"],
-    "bio": "Met at the gym. Keeps me motivated and accountable for workouts.",
+    "bio": "Met at the gym.",
     "goal": 5,
     "next_due_date": "2025-07-25"
   },
@@ -55,7 +55,7 @@
     "days_since_contact": 12,
     "status": "Due Soon",
     "tags": ["travel"],
-    "bio": "Travel buddy from Spain trip. We explored hidden cafes and beaches together.",
+    "bio": "Travel buddy from Spain trip.",
     "goal": 10,
     "next_due_date": "2025-07-18"
   },
@@ -79,7 +79,7 @@
     "days_since_contact": 7,
     "status": "Active",
     "tags": ["friends"],
-    "bio": "Met at a conference. We bonded over shared interests in AI and startups.",
+    "bio": "Met at a conference.",
     "goal": 10,
     "next_due_date": "2025-07-22"
   },
@@ -91,7 +91,7 @@
     "days_since_contact": 15,
     "status": "Due Soon",
     "tags": ["business"],
-    "bio": "Business partner in a small e-commerce project. Very reliable and strategic thinker.",
+    "bio": "Business partner in a small e-commerce project.",
     "goal": 12,
     "next_due_date": "2025-07-16"
   },
@@ -103,7 +103,7 @@
     "days_since_contact": 3,
     "status": "Active",
     "tags": ["school"],
-    "bio": "High school friend. We still catch up occasionally over coffee.",
+    "bio": "High school friend.",
     "goal": 7,
     "next_due_date": "2025-07-24"
   },
@@ -115,7 +115,7 @@
     "days_since_contact": 20,
     "status": "Overdue",
     "tags": ["sports"],
-    "bio": "Football teammate. We used to play every weekend.",
+    "bio": "Football teammate.",
     "goal": 10,
     "next_due_date": "2025-07-12"
   },
@@ -127,7 +127,7 @@
     "days_since_contact": 9,
     "status": "Due Soon",
     "tags": ["online"],
-    "bio": "Met through an online community. We collaborate on design projects.",
+    "bio": "Met through an online community.",
     "goal": 8,
     "next_due_date": "2025-07-19"
   },
@@ -139,7 +139,7 @@
     "days_since_contact": 1,
     "status": "Active",
     "tags": ["neighbor"],
-    "bio": "Neighbor who recently moved in. Friendly and always up for a chat.",
+    "bio": "Neighbor who recently moved in.",
     "goal": 5,
     "next_due_date": "2025-07-26"
   }

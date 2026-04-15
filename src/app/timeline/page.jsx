@@ -1,15 +1,15 @@
 import Footer from "@/components/Footer";
 import Navbar from "@/components/Navbar";
-import React from "react";
+import Timeline from "@/components/timeline/Timeline";
 
-const page = () => {
+const TimelinePage = () => {
   return (
-    <div>
+    <main className="flex min-h-screen flex-col bg-[#F8FAFC]">
       <Navbar />
-      Timeline Page
+      <Timeline />
       <Footer />
-    </div>
+    </main>
   );
 };
 
-export default page;
+export default TimelinePage;
