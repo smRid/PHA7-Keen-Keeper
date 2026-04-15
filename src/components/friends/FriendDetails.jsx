@@ -200,7 +200,7 @@ const FriendDetails = ({ friend }) => {
                   key={type}
                   type="button"
                   onClick={() => handleQuickCheckIn(type)}
-                  className="flex min-h-[72px] flex-col items-center justify-center gap-2 rounded-[8px] border border-[#E9EEF5] bg-[#FBFCFE] px-4 py-4 text-[15px] font-medium text-[#1F2937] transition hover:bg-white hover:text-[#244D3F]"
+                  className="flex min-h-[72px] cursor-pointer flex-col items-center justify-center gap-2 rounded-[8px] border border-[#E9EEF5] bg-[#FBFCFE] px-4 py-4 text-[15px] font-medium text-[#1F2937] transition hover:bg-white hover:text-[#244D3F]"
                 >
                   <Icon className="text-[24px]" />
                   <span>{type}</span>
