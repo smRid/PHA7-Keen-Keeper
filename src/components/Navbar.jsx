@@ -1,13 +1,14 @@
 "use client";
 
-import React from "react";
-import { RiHome2Line } from "react-icons/ri";
+import React, { useState } from "react";
+import { RiCloseLine, RiHome2Line, RiMenu3Line } from "react-icons/ri";
 import Link from "next/link";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
 
 const Navbar = () => {
   const pathname = usePathname();
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
   const navItems = [
     {
       path: "/",
@@ -41,22 +42,23 @@ const Navbar = () => {
       ),
     },
   ];
+
   return (
-    <div className="navbar bg-white shadow-sm border-b border-gray-100">
-      <div className="container mx-auto px-4 md:px-0">
-        <div className="navbar-start">
+    <div className="navbar relative border-b border-gray-100 bg-white shadow-sm">
+      <div className="container mx-auto flex w-full items-center justify-between px-4 md:px-0">
+        <div className="flex items-center">
           <Link href="/">
             <Image
               src="/logo.png"
               alt="Logo"
               width={150}
               height={45}
-              className="w-auto h-10 object-contain"
+              className="h-8 w-auto object-contain sm:h-9 md:h-10"
               priority
             />
           </Link>
         </div>
-        <div className="navbar-end">
+        <div className="hidden items-center md:flex">
           <div className="flex items-center gap-4">
             {navItems.map((item, ind) => {
               const isActive = pathname === item.path;
@@ -76,6 +78,51 @@ const Navbar = () => {
               );
             })}
           </div>
+        </div>
+
+        <div className="relative md:hidden">
+          <button
+            type="button"
+            aria-label={isMenuOpen ? "Close navigation menu" : "Open navigation menu"}
+            aria-expanded={isMenuOpen}
+            aria-controls="mobile-navigation-menu"
+            onClick={() => setIsMenuOpen((prev) => !prev)}
+            className="inline-flex h-11 w-11 items-center justify-center rounded-xl border border-slate-200 text-slate-700 transition-colors hover:border-[#244D3F] hover:text-[#244D3F]"
+          >
+            {isMenuOpen ? (
+              <RiCloseLine className="text-[26px]" />
+            ) : (
+              <RiMenu3Line className="text-[26px]" />
+            )}
+          </button>
+
+          {isMenuOpen ? (
+            <div
+              id="mobile-navigation-menu"
+              className="absolute right-0 top-[calc(100%+12px)] z-30 w-64 max-w-[calc(100vw-2rem)] rounded-2xl border border-slate-200 bg-white p-2 shadow-xl"
+            >
+              <div className="flex flex-col gap-1">
+                {navItems.map((item, ind) => {
+                  const isActive = pathname === item.path;
+                  return (
+                    <Link
+                      key={ind}
+                      href={item.path}
+                      onClick={() => setIsMenuOpen(false)}
+                      className={`flex items-center gap-3 rounded-xl px-4 py-3 text-base font-medium transition-colors ${
+                        isActive
+                          ? "bg-[#244D3F] text-white"
+                          : "text-slate-600 hover:bg-slate-50 hover:text-[#244D3F]"
+                      }`}
+                    >
+                      {item.icon}
+                      <span>{item.text}</span>
+                    </Link>
+                  );
+                })}
+              </div>
+            </div>
+          ) : null}
         </div>
       </div>
     </div>

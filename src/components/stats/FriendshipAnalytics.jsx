@@ -17,7 +17,7 @@ const interactionPalette = [
 ];
 
 const InteractionLegend = ({ items = [] }) => (
-  <div className="mt-4 flex flex-wrap items-center justify-center gap-6 text-[12px] text-[#61728A]">
+  <div className="mt-4 flex flex-wrap items-center justify-center gap-6 text-[16px] text-[#61728A]">
     {items.map((entry) => (
       <div key={entry.key} className="flex items-center gap-2">
         <span
