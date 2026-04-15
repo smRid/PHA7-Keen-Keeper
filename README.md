@@ -21,23 +21,19 @@ A polished relationship tracker built with Next.js and React, where users can br
 ## Preview
 
 <p align="center">
-  <img src="./public/Preview1.png" alt="KeenKeeper Homepage Preview" width="600" />
+  <img src="./public/Preview1.png" alt="KeenKeeper Homepage Preview" width="500" />
 </p>
 
 <p align="center">
-  <img src="./public/Preview2.png" alt="KeenKeeper Friends Grid Preview" width="600" />
+  <img src="./public/Preview3.png" alt="KeenKeeper Friend Details Preview" width="500" />
 </p>
 
 <p align="center">
-  <img src="./public/Preview3.png" alt="KeenKeeper Friend Details Preview" width="600" />
+  <img src="./public/Preview4.png" alt="KeenKeeper Timeline Preview" width="500" />
 </p>
 
 <p align="center">
-  <img src="./public/Preview4.png" alt="KeenKeeper Timeline Preview" width="600" />
-</p>
-
-<p align="center">
-  <img src="./public/Preview5.png" alt="KeenKeeper Friendship Analytics Preview" width="600" />
+  <img src="./public/Preview5.png" alt="KeenKeeper Friendship Analytics Preview" width="500" />
 </p>
 
 > **Live Site:** [https://keen-keeper2026.vercel.app/](https://keen-keeper2026.vercel.app/)
