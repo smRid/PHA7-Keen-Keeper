@@ -1,15 +1,15 @@
 import Footer from "@/components/Footer";
+import FriendshipAnalytics from "@/components/stats/FriendshipAnalytics";
 import Navbar from "@/components/Navbar";
-import React from "react";
 
-const page = () => {
+const StatsPage = () => {
   return (
-    <div>
+    <main className="flex min-h-screen flex-col bg-[#F8FAFC]">
       <Navbar />
-      Stats Page
+      <FriendshipAnalytics />
       <Footer />
-    </div>
+    </main>
   );
 };
 
-export default page;
+export default StatsPage;
