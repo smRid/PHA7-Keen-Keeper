@@ -36,11 +36,9 @@ export const formatCalendarDate = (dateValue) =>
 
 export const formatTimelineDate = (dateValue) =>
   new Intl.DateTimeFormat("en-US", {
-    month: "short",
+    month: "long",
     day: "numeric",
     year: "numeric",
-    hour: "numeric",
-    minute: "2-digit",
   }).format(new Date(dateValue));
 
 export const getDerivedNextDueDate = (friend) => {
