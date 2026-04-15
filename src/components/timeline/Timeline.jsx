@@ -18,6 +18,12 @@ const filterOptions = [
   { value: "Meetup", label: "Meetups" },
 ];
 
+const sortOptions = [
+  { value: "", label: "Filter date" },
+  { value: "oldest", label: "Oldest first" },
+  { value: "newest", label: "Newest first" },
+];
+
 const typeIconMap = {
   Call: {
     icon: callIcon,
@@ -37,9 +43,16 @@ const typeIconMap = {
   },
 };
 
+const getEntryTimestamp = (entry) => {
+  const timestamp = new Date(entry?.createdAt ?? 0).getTime();
+  return Number.isNaN(timestamp) ? 0 : timestamp;
+};
+
 const TimelineClient = () => {
   const [entries, setEntries] = useState([]);
   const [selectedFilter, setSelectedFilter] = useState("");
+  const [selectedSort, setSelectedSort] = useState("");
+  const [searchQuery, setSearchQuery] = useState("");
 
   useEffect(() => {
     const syncEntries = () => {
@@ -56,9 +69,26 @@ const TimelineClient = () => {
     };
   }, []);
 
-  const filteredEntries = selectedFilter
-    ? entries.filter((entry) => entry.type === selectedFilter)
-    : entries;
+  const normalizedQuery = searchQuery.trim().toLowerCase();
+
+  const filteredEntries = entries
+    .filter((entry) =>
+      selectedFilter ? entry.type === selectedFilter : true,
+    )
+    .filter((entry) => {
+      if (!normalizedQuery) {
+        return true;
+      }
+
+      const searchableText = `${entry.type ?? ""} ${entry.friendName ?? ""} ${entry.title ?? ""}`.toLowerCase();
+      return searchableText.includes(normalizedQuery);
+    })
+    .sort((leftEntry, rightEntry) => {
+      const newestFirstOrder =
+        getEntryTimestamp(rightEntry) - getEntryTimestamp(leftEntry);
+
+      return selectedSort === "oldest" ? -newestFirstOrder : newestFirstOrder;
+    });
 
   return (
     <section className="mx-auto flex w-full max-w-[1110px] flex-1 flex-col px-5 py-10 sm:px-6 md:py-12">
@@ -67,20 +97,48 @@ const TimelineClient = () => {
           Timeline
         </h1>
 
-        <div className="relative w-full max-w-[220px]">
-          <select
-            value={selectedFilter}
-            onChange={(event) => setSelectedFilter(event.target.value)}
-            className="h-[48px] w-full appearance-none rounded-[8px] border border-[#D9E1EC] bg-white px-4 pr-10 text-[15px] text-[#73839D] outline-none transition focus:border-[#244D3F]"
-          >
-            {filterOptions.map((option) => (
-              <option key={option.label} value={option.value}>
-                {option.label}
-              </option>
-            ))}
-          </select>
+        <div className="flex flex-col gap-4 md:flex-row md:items-center">
+          <div className="relative w-full max-w-[220px]">
+            <select
+              value={selectedFilter}
+              onChange={(event) => setSelectedFilter(event.target.value)}
+              className="h-[48px] w-full appearance-none rounded-[8px] border border-[#D9E1EC] bg-white px-4 pr-10 text-[15px] text-[#73839D] outline-none transition focus:border-[#244D3F]"
+            >
+              {filterOptions.map((option) => (
+                <option key={option.label} value={option.value}>
+                  {option.label}
+                </option>
+              ))}
+            </select>
 
-          <LuChevronDown className="pointer-events-none absolute right-4 top-1/2 -translate-y-1/2 text-[18px] text-[#9BA9BD]" />
+            <LuChevronDown className="pointer-events-none absolute right-4 top-1/2 -translate-y-1/2 text-[18px] text-[#9BA9BD]" />
+          </div>
+
+          <div className="relative w-full max-w-[220px]">
+            <select
+              value={selectedSort}
+              onChange={(event) => setSelectedSort(event.target.value)}
+              className="h-[48px] w-full appearance-none rounded-[8px] border border-[#D9E1EC] bg-white px-4 pr-10 text-[15px] text-[#73839D] outline-none transition focus:border-[#244D3F]"
+            >
+              {sortOptions.map((option, index) => (
+                <option key={`${option.label}-${index}`} value={option.value}>
+                  {option.label}
+                </option>
+              ))}
+            </select>
+
+            <LuChevronDown className="pointer-events-none absolute right-4 top-1/2 -translate-y-1/2 text-[18px] text-[#9BA9BD]" />
+          </div>
+
+          <div className="w-full max-w-[260px]">
+            <input
+              type="search"
+              value={searchQuery}
+              onChange={(event) => setSearchQuery(event.target.value)}
+              placeholder="Search timeline"
+              className="h-[48px] w-full rounded-[8px] border border-[#D9E1EC] bg-white px-4 text-[15px] text-[#73839D] outline-none transition placeholder:text-[#9BA9BD] focus:border-[#244D3F]"
+            />
+          </div>
         </div>
       </div>
 
