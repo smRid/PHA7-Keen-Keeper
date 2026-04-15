@@ -19,7 +19,7 @@ const Banner = () => {
       <div className="mb-14 grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-4">
         <div className="bg-[#FFFFFF] shadow-lg gap-4 p-10 rounded-lg">
           <h2 className="text-center text-[#244D3F] font-bold text-3xl mb-2">
-            10
+            12
           </h2>
           <p className="text-[#64748B] text-[18px] text-center">
             Total Friends
@@ -27,7 +27,7 @@ const Banner = () => {
         </div>
         <div className="bg-[#FFFFFF] shadow-lg gap-4 p-10 rounded-lg">
           <h2 className="text-center text-[#244D3F] font-bold text-3xl mb-2">
-            3
+            5
           </h2>
           <p className="text-[#64748B] text-[18px] text-center">On Track</p>
         </div>
