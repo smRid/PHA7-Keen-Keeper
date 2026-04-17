@@ -136,7 +136,7 @@ const FriendDetails = ({ friend }) => {
             <p className="mt-4 text-[14px] italic leading-6 text-[#7183A2]">
               &quot;{friend.bio}&quot;
             </p>
-            <p className="mt-2 text-[14px] text-[#7C8DA8]">Preferred: email</p>
+            <p className="mt-2 text-[14px] text-[#7C8DA8]">{friend.email}</p>
           </div>
 
           <div className="space-y-2">
